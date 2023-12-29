@@ -1,0 +1,44 @@
+<?php
+
+namespace app\controllers;
+
+use core\App;
+use core\SessionUtils;
+use core\Message;
+use core\Utils;
+
+class ClientCtrl {
+
+    public $visitDataAccepted;
+
+    public $visitDataDoctor;
+    
+    public function action_clientDisplay() {
+
+        $this->visitDataAccepted = App::getDB()->select("visits", [
+            "[>]pets" => ["visit_pet_id" => "pet_id"],
+            "[>]users" => ["visit_doctor_id" => "user_id"],
+            "[>]pet_types" => ["pets.pet_type_id" => "ptype_id"]
+        ],[
+            "visits.visit_id",
+            "visits.visit_datetime",
+            "visits.visit_doctor_id",
+            "visits.visit_reason",
+            "users.user_name",
+            "users.user_surname",
+            "users.user_id",
+            "pets.pet_name",
+            "pets.pet_age",
+            "pet_types.ptype_name"
+        ],[
+            "pets.pet_user_id" => SessionUtils::load("id", $keep = true) 
+        ]);
+
+
+        App::getSmarty()->assign("lista", $this->visitDataAccepted);
+
+        App::getSmarty()->display("ClientPanel.tpl");
+        
+    }
+    
+}

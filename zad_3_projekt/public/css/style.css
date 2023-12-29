@@ -12,13 +12,33 @@ body{
     box-shadow: 0.2em 0.2em 0.4em #ccc;
 }
 
+.content {
+  text-align: center;
+}
+
+.column {
+  margin: 1em auto;
+  padding: 1em;
+  border: 3px solid black;
+  border-radius: 20px;
+  min-height:400px;
+  max-height:400px;
+  overflow-y:auto;
+}
+
+.colHead {
+  display: inline-block;
+  margin-top: 10px;
+}
+
 .visit {
+  display: flex;
 	margin: 1em auto;
-	width: 30%;
-	padding: 1em 1em 1em 3em;
+	width: 400px;
+	padding: 20px;
 	border-radius: 1em;
 	background: #6495ED;
-	text-align: center;
+  word-wrap: break-word;
 }
 
 .visit textarea {
@@ -27,9 +47,10 @@ body{
 }
 
 .visit_area1 {
-	display: inline-block;
+  width: auto;
+  margin: auto;
 	padding: 1em;
-	margin: 1em auto;
+  text-align: center;
 	overflow: hidden;
 }
 
@@ -109,6 +130,11 @@ body{
 .menuButton:active {
   border-width: 4px 0 0;
   background: none;
+}
+
+.tab {
+  display: inline-block;
+  margin-left: 20px;
 }
 
 .header, .footer, .menu, .login{ 

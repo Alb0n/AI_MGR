@@ -13,7 +13,11 @@ Utils::addRoute('login', 'LoginCtrl');
 Utils::addRoute('logout', 'LoginCtrl');
 Utils::addRoute('loginShow', 'LoginCtrl');
 
-Utils::addRoute('visitDisplay', 'VisitDisplayCtrl');
+Utils::addRoute('doctorDisplay', 'DoctorCtrl',["admin", "doctor"]);
+Utils::addRoute('doctorVisit', 'DoctorVisitCtrl',["admin", "doctor"]);
+
+Utils::addRoute('clientDisplay', 'ClientCtrl',["admin", "client"]);
+
 Utils::addRoute('visitForm', 'VisitFormCtrl',["admin", "client"]);
 
 

@@ -22,6 +22,8 @@ class MainPageCtrl {
             "users.user_name",
             "users.user_surname",
             "users.user_id"
+        ], [
+            "visits.visit_pet_id" => null
         ]);
 
         App::getSmarty()->assign("lista", $this->visitData);

@@ -67,7 +67,8 @@ class VisitFormCtrl {
             $this->visitDataPet = App::getDB()->insert("pets",[
                 "pet_name" => $this->form->pet_name,
                 "pet_age" => $this->form->pet_age,
-                //"pet_type_id" => $this->form->pet_type
+                "pet_user_id" => SessionUtils::load("id", $keep = true),
+                "pet_type_id" => $this->form->pet_type
             ]);
             
             $this->visitDataPet = App::getDB()->get("pets", [
@@ -120,7 +121,7 @@ class VisitFormCtrl {
         App::getSmarty()->assign("visit_datetime", $this->visitData["visit_datetime"]);
 
         if($this->validateVisit()){
-            App::getSmarty()->display('MainPage.tpl');
+            header("Location: ".App::getConf()->app_url);
         } else {
             App::getSmarty()->assign("visit_id", $this->visit_id);
             App::getSmarty()->display('VisitPage.tpl');

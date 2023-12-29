@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-29 22:06:50
-  from 'C:\xampp\htdocs\zad_3_projekt\app\views\MainPage.tpl' */
+/* Smarty version 4.3.4, created on 2023-12-29 22:22:55
+  from 'C:\xampp\htdocs\zad_3_projekt\app\views\ClientPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_658f34ea6967f7_42063980',
+  'unifunc' => 'content_658f38af561367_46226649',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '16a7a74a62126d259b45324ca9df2094776a7571' => 
+    'df18c230067d756d20c908c72cbf3c3a0b66b4da' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\MainPage.tpl',
-      1 => 1703884007,
+      0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\ClientPanel.tpl',
+      1 => 1703884962,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_658f34ea6967f7_42063980 (Smarty_Internal_Template $_smarty_tpl) {
+function content_658f38af561367_46226649 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1148176488658f34ea44c2f0_80096073', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1474717056658f38af54f5f5_47682848', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_824311993658f34ea44d324_05465013', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2084943275658f38af550155_89583554', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'footer'} */
-class Block_1148176488658f34ea44c2f0_80096073 extends Smarty_Internal_Block
+class Block_1474717056658f38af54f5f5_47682848 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_1148176488658f34ea44c2f0_80096073',
+    0 => 'Block_1474717056658f38af54f5f5_47682848',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,50 +51,49 @@ przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_824311993658f34ea44d324_05465013 extends Smarty_Internal_Block
+class Block_2084943275658f38af550155_89583554 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_824311993658f34ea44d324_05465013',
+    0 => 'Block_2084943275658f38af550155_89583554',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
-<?php
+	<div class="colHead"><h2>Moje wizyty</h2>
+		<div class="column">
+		<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['lista']->value, 'wiersz');
 $_smarty_tpl->tpl_vars['wiersz']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['wiersz']->value) {
 $_smarty_tpl->tpl_vars['wiersz']->do_else = false;
 ?>
-<div class="visit">
-	<div class="visit_area1">
-		<table cellpadding="5">
-			
-				<tr>
-					Lekarz: <?php echo $_smarty_tpl->tpl_vars['wiersz']->value["user_name"];?>
+			<div class="visit">
+				<div class="visit_area1">
+					<table cellpadding="5">
+						<tr>
+							Lekarz: <?php echo $_smarty_tpl->tpl_vars['wiersz']->value["user_name"];?>
 
-					<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["user_surname"];?>
+							<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["user_surname"];?>
 <br>
-					<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["visit_datetime"];?>
+							<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["visit_datetime"];?>
 <br>
-					<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["visit_id"];?>
+							<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["visit_id"];?>
+<br>
+							Pacjent:<span class="tab"></span><?php echo $_smarty_tpl->tpl_vars['wiersz']->value["pet_name"];?>
 
-				</tr>	
- 		</table>
-	</div>
-	<div class="visit_area1">
-		<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"visitForm"),$_smarty_tpl ) );?>
-?id=<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["visit_id"];?>
-"><button>Wybierz</button></a>
-		
-	</div>
-</div>
-<?php
+						</tr>	
+					</table>
+				</div>
+			</div>
+		<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+		</div>
+	</div>
 
 <div class="messages">
 

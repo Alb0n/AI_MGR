@@ -17,6 +17,12 @@
 
 <div class="menu">
 	<a href="{$conf->action_root}mainPage"><button class="menuButton">Home</button></a>
+	{if \core\RoleUtils::inRole("doctor")}
+	<a href="{$conf->action_root}doctorDisplay"><button class="menuButton">Panel doktora</button></a>
+	{/if}
+	{if \core\RoleUtils::inRole("client")}
+	<a href="{$conf->action_root}clientDisplay"><button class="menuButton">Panel klienta</button></a>
+	{/if}
 	{if count($conf->roles)>0}
 		<a href="{$conf->action_root}logout"><button class="menuButton">Wyloguj</button></a>
 	{else}
