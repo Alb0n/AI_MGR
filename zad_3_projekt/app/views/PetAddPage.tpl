@@ -11,20 +11,28 @@
 <body>
 
 <div class="login">
-    <form action="{$conf->action_root}doctorVisit" method="post" class="pure-form pure-form-aligned bottom-margin">
-	<h3>Dodaj wizytę</h3>
+    <form action="{$conf->action_root}petAdd" method="post" class="pure-form pure-form-aligned bottom-margin">
+	<h3>Dodawanie zwierzęcia</h3>
 	<fieldset>
 		<div class="pure-control-group">
-			<label for="id_visit_date">Dzień: </label>
-			<input id="id_visit_date" type="date" name="visit_date" /><br>
-			<label for="id_visit_time">Godzina: </label>
-			<input id="id_visit_time" type="time" name="visit_time" /><br>
+			<label for="id_pet_type">Rodzaj zwierzęcia: </label>
+			<select id="id_pet_type" name="pet_type">
+				<option value=""></option>
+				{foreach $type_list as $row}
+					<option value="{$row["ptype_id"]}">{$row["ptype_name"]}</option>
+				{/foreach}
+			</select><br>
+			<label for="id_pet_name">Imię: </label>
+			<input id="id_pet_name" type="text" name="pet_name" /><br>
+			<label for="id_pet_age">Wiek: </label>
+			<input id="id_pet_age" type="number" name="pet_age" /><br>
 		</div>
 		<div class="pure_controls">
 			<input type="submit" value="Zapisz" class="pure-button pure-button-primary"/>
 		</div>
 	</fieldset>
 </div>
+
 
 {if $msgs->isError()}
 <h4>Wystąpiły błędy:</h4>

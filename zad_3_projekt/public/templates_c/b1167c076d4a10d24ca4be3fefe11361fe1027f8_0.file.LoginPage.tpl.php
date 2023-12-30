@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-30 16:21:01
-  from 'C:\xampp\htdocs\zad_3_projekt\app\views\DoctorVisitPage.tpl' */
+/* Smarty version 4.3.4, created on 2023-12-30 16:22:28
+  from 'C:\xampp\htdocs\zad_3_projekt\app\views\LoginPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_6590355d0b4c76_31385558',
+  'unifunc' => 'content_659035b476e813_60390960',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '703dcd736ec742f86ea358a3162816f91d1a793c' => 
+    'b1167c076d4a10d24ca4be3fefe11361fe1027f8' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\DoctorVisitPage.tpl',
-      1 => 1703949593,
+      0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\LoginPage.tpl',
+      1 => 1703949711,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6590355d0b4c76_31385558 (Smarty_Internal_Template $_smarty_tpl) {
+function content_659035b476e813_60390960 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pl">
 <head>
@@ -37,20 +37,21 @@ function content_6590355d0b4c76_31385558 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class="login">
     <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-doctorVisit" method="post" class="pure-form pure-form-aligned bottom-margin">
-	<h3>Dodaj wizytę</h3>
+login" method="post" class="pure-form pure-form-aligned bottom-margin">
+	<h3>Logowanie</h3>
 	<fieldset>
 		<div class="pure-control-group">
-			<label for="id_visit_date">Dzień: </label>
-			<input id="id_visit_date" type="date" name="visit_date" /><br>
-			<label for="id_visit_time">Godzina: </label>
-			<input id="id_visit_time" type="time" name="visit_time" /><br>
+			<label for="id_login">Login: </label>
+			<input id="id_login" type="text" name="login" /><br>
+			<label for="id_password">Password: </label>
+			<input id="id_password" type="password" name="password" />
 		</div>
 		<div class="pure_controls">
-			<input type="submit" value="Zapisz" class="pure-button pure-button-primary"/>
+			<input type="submit" value="zaloguj" class="pure-button pure-button-primary"/>
 		</div>
 	</fieldset>
 </div>
+
 
 <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
 <h4>Wystąpiły błędy:</h4>

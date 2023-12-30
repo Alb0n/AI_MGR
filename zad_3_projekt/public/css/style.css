@@ -18,6 +18,7 @@ body{
 
 .column {
   margin: 1em auto;
+  min-width: 200px;
   padding: 1em;
   border: 3px solid black;
   border-radius: 20px;
@@ -52,10 +53,12 @@ body{
 	padding: 1em;
   text-align: center;
 	overflow: hidden;
+  word-wrap: break-word;
 }
 
 .visit_area2 {
 	padding: 1em auto;
+  text-align: center;
 }
 
 .login {

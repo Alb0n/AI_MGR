@@ -2,9 +2,15 @@
 
 namespace app\forms;
 
-class VisitForm {
-    public $pet_name;
-    public $visit_reason;
+class RegisterForm {
+    public $login;
+    public $password;
+    public $password_repeat;
+    public $name;
+    public $surname;
+    public $email;
+    public $address;
+    public $pesel;
 
     function checkIsNull() {
         foreach ($this as $key => $value) {

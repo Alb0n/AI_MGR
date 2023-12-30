@@ -2,9 +2,10 @@
 
 namespace app\forms;
 
-class VisitForm {
+class PetForm {
+    public $pet_type;
     public $pet_name;
-    public $visit_reason;
+    public $pet_age;
 
     function checkIsNull() {
         foreach ($this as $key => $value) {

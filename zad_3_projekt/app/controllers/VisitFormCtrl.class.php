@@ -27,9 +27,7 @@ class VisitFormCtrl {
 
     public function getVisitParams() {
         $this->visit_id = ParamUtils::getFromGet("id");
-        $this->form->pet_type = ParamUtils::getFromRequest("pet_type");
         $this->form->pet_name = ParamUtils::getFromRequest("pet_name");
-        $this->form->pet_age = ParamUtils::getFromRequest("pet_age");
         $this->form->visit_reason = ParamUtils::getFromRequest("visit_reason");
     }
 
@@ -39,21 +37,10 @@ class VisitFormCtrl {
 
         $v = new Validator();
         
-        $v->validate($this->form->pet_type, [
-            'trim' => true,
-            'required' => true,
-            'required_message' => 'Nie podano rodzaju zwierzęcia',
-        ]);
         $v->validate($this->form->pet_name, [
             'trim' => true,
             'required' => true,
-            'required_message' => 'Nie podano imienia zwierzęcia',
-        ]);
-        $v->validate($this->form->pet_age, [
-            'trim' => true,
-            'required' => true,
-            'numeric' => true,
-            'required_message' => 'Nie podano wieku zwierzęcia',
+            'required_message' => 'Nie wybrano pacjenta',
         ]);
         $v->validate($this->form->visit_reason, [
             'trim' => true,
@@ -64,23 +51,9 @@ class VisitFormCtrl {
         if(App::getMessages()->isError()) return false;
 
         try {
-            $this->visitDataPet = App::getDB()->insert("pets",[
-                "pet_name" => $this->form->pet_name,
-                "pet_age" => $this->form->pet_age,
-                "pet_user_id" => SessionUtils::load("id", $keep = true),
-                "pet_type_id" => $this->form->pet_type
-            ]);
-            
-            $this->visitDataPet = App::getDB()->get("pets", [
-                "pet_id"
-            ],[
-                "pet_name" => $this->form->pet_name,
-                "pet_age" => $this->form->pet_age 
-            ]);
-
             $this->visitData = App::getDB()->update("visits",[
                 "visit_reason" => $this->form->visit_reason,
-                "visit_pet_id" => $this->visitDataPet["pet_id"]
+                "visit_pet_id" => $this->form->pet_name
             ],[
                 "visit_id" => $this->visit_id
             ]);
@@ -89,6 +62,7 @@ class VisitFormCtrl {
             Utils::addErrorMessage("Błąd połączenia z bazą danych");
         }
 
+        
         if(!App::getMessages()->isError()) return true;
         else return false;
     }
@@ -110,16 +84,18 @@ class VisitFormCtrl {
             "visits.visit_id" => $this->visit_id
         ]);
 
-        $this->visitDataPet = App::getDB()->select("pet_types", [
-            "ptype_name",
-            "ptype_id"
+        $this->visitDataPet = App::getDB()->select("pets", [
+            "pet_name",
+            "pet_id"
+        ],[
+            "pet_user_id" => SessionUtils::load("id", $keep = true)
         ]);
 
-        App::getSmarty()->assign("type_list", $this->visitDataPet);
+        App::getSmarty()->assign("pet_list", $this->visitDataPet);
         App::getSmarty()->assign("visit_doctor_name", $this->visitData["user_name"]);
         App::getSmarty()->assign("visit_doctor_surname", $this->visitData["user_surname"]);
         App::getSmarty()->assign("visit_datetime", $this->visitData["visit_datetime"]);
-
+        
         if($this->validateVisit()){
             header("Location: ".App::getConf()->app_url);
         } else {
@@ -131,13 +107,5 @@ class VisitFormCtrl {
     public function action_visitForm() {
         $this->getVisitParams();
         $this->generateView();
-
-        
-        
-    }
-
-    public function action_visitFormAccept() {
-
-    }
-    
+    }   
 }

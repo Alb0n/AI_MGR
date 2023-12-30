@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-30 16:28:58
-  from 'C:\xampp\htdocs\zad_3_projekt\app\views\VisitPage.tpl' */
+/* Smarty version 4.3.4, created on 2023-12-30 16:26:16
+  from 'C:\xampp\htdocs\zad_3_projekt\app\views\PetAddPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_6590373ac3d863_74624514',
+  'unifunc' => 'content_65903698368b38_13345760',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '209678fc4bd612276f6e970f2a01054eabbc9533' => 
+    '4c661443c50fe9529a5344c46491ca5abd760a47' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\VisitPage.tpl',
-      1 => 1703950136,
+      0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\PetAddPage.tpl',
+      1 => 1703949638,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6590373ac3d863_74624514 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65903698368b38_13345760 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pl">
 <head>
@@ -36,34 +36,31 @@ function content_6590373ac3d863_74624514 (Smarty_Internal_Template $_smarty_tpl)
 <body>
 
 <div class="login">
-    <form action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"visitForm"),$_smarty_tpl ) );?>
-?id=<?php echo $_smarty_tpl->tpl_vars['visit_id']->value;?>
-" method="post" class="pure-form pure-form-aligned bottom-margin">
-	<h3>Wizyta</h3>
-	<h2>Lekarz: <?php echo $_smarty_tpl->tpl_vars['visit_doctor_name']->value;?>
- <?php echo $_smarty_tpl->tpl_vars['visit_doctor_surname']->value;?>
- <?php echo $_smarty_tpl->tpl_vars['visit_datetime']->value;?>
-</h2>
+    <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+petAdd" method="post" class="pure-form pure-form-aligned bottom-margin">
+	<h3>Dodawanie zwierzęcia</h3>
 	<fieldset>
 		<div class="pure-control-group">
-			<label for="id_pet_name">Wybierz pacjenta: </label>
-			<select id="id_pet_name" name="pet_name">
+			<label for="id_pet_type">Rodzaj zwierzęcia: </label>
+			<select id="id_pet_type" name="pet_type">
 				<option value=""></option>
 				<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['pet_list']->value, 'row');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['type_list']->value, 'row');
 $_smarty_tpl->tpl_vars['row']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->do_else = false;
 ?>
-					<option value="<?php echo $_smarty_tpl->tpl_vars['row']->value["pet_id"];?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value["pet_name"];?>
+					<option value="<?php echo $_smarty_tpl->tpl_vars['row']->value["ptype_id"];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value["ptype_name"];?>
 </option>
 				<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			</select><br>
-			<label for="id_visit_reason">Powód wizyty: </label>
-			<textarea id="id_visit_reason" name="visit_reason"></textarea><br>
+			<label for="id_pet_name">Imię: </label>
+			<input id="id_pet_name" type="text" name="pet_name" /><br>
+			<label for="id_pet_age">Wiek: </label>
+			<input id="id_pet_age" type="number" name="pet_age" /><br>
 		</div>
 		<div class="pure_controls">
 			<input type="submit" value="Zapisz" class="pure-button pure-button-primary"/>
@@ -88,6 +85,7 @@ $_smarty_tpl->tpl_vars['msg']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
 <?php }?>
+
 
 </body>
 </html><?php }

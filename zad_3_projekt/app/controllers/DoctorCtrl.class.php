@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use core\App;
 use core\SessionUtils;
+use core\ParamUtils;
 use core\Message;
 use core\Utils;
 
@@ -56,8 +57,21 @@ class DoctorCtrl {
         App::getSmarty()->assign("lista", $this->visitData);
         App::getSmarty()->assign("lista2", $this->visitDataAccepted);
 
+        App::getSmarty()->assign("page_header", "Panel doktora");
+
         App::getSmarty()->display("DoctorPanel.tpl");
         
+    }
+
+    public function action_doctorVisitCancel() {
+        $visit_id = ParamUtils::getFromGet("visit_id");
+
+        $this->visitData = App::getDB()->delete("visits", [
+            "visit_id" => $visit_id 
+        ]);
+
+        header("Location: ".App::getConf()->app_url."/doctorDisplay");
+
     }
     
 }

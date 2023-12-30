@@ -59,7 +59,6 @@ class DoctorVisitCtrl {
 
     public function generateView(){
         if($this->validateDoctorVisit()){
-            //App::getSmarty()->display('DoctorPanel.tpl');
             header("Location: ".App::getConf()->app_url."/doctorDisplay");
         }
         else {
@@ -70,10 +69,6 @@ class DoctorVisitCtrl {
     public function action_doctorVisit() {
 		$this->getDoctorVisitParams();  
         $this->generateView();     
-        
-        
-        //App::getSmarty()->display("MainPage.tpl");
-        
     }
     
 }

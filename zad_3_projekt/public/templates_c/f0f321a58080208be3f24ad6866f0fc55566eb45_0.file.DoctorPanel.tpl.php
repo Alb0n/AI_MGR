@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-29 22:24:50
+/* Smarty version 4.3.4, created on 2023-12-30 16:21:04
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\DoctorPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_658f3922f31fd1_59310622',
+  'unifunc' => 'content_65903560a3a277_73001989',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f0f321a58080208be3f24ad6866f0fc55566eb45' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\DoctorPanel.tpl',
-      1 => 1703885089,
+      1 => 1703949618,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_658f3922f31fd1_59310622 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65903560a3a277_73001989 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1481489960658f3922f1b502_12593186', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_71143531165903560a163d1_40248437', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1749494155658f3922f1c086_01767184', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_125533761865903560a17582_15267315', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'footer'} */
-class Block_1481489960658f3922f1b502_12593186 extends Smarty_Internal_Block
+class Block_71143531165903560a163d1_40248437 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_1481489960658f3922f1b502_12593186',
+    0 => 'Block_71143531165903560a163d1_40248437',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_1749494155658f3922f1c086_01767184 extends Smarty_Internal_Block
+class Block_125533761865903560a17582_15267315 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1749494155658f3922f1c086_01767184',
+    0 => 'Block_125533761865903560a17582_15267315',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -89,13 +89,18 @@ $_smarty_tpl->tpl_vars['wiersz']->do_else = false;
 						</tr>	
 					</table>
 				</div>
+				<div class="visit_area2">
+					<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"doctorVisitCancel"),$_smarty_tpl ) );?>
+?visit_id=<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["visit_id"];?>
+"><button>Usuń wizytę</button></a>
+				</div>
 			</div>
 		<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>
 	</div>
-	<div class="colHead"><h2>Wizyty zatwierdzone</h2>
+	<div class="colHead"><h2>Wizyty zarezerwowane</h2>
 		<div class="column">
 		<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['lista2']->value, 'wiersz2');
@@ -171,15 +176,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</ol>
 	<?php }
 }?>
-
-<?php if ((isset($_smarty_tpl->tpl_vars['result']->value))) {?>
-	<h4>Wynik</h4>
-	<p class="res">
-	<?php echo $_smarty_tpl->tpl_vars['result']->value;?>
-
-	</p>
-<?php }?>
-
 </div>
 
 <?php

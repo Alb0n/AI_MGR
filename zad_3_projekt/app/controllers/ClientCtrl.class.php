@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use core\App;
 use core\SessionUtils;
+use core\ParamUtils;
 use core\Message;
 use core\Utils;
 
@@ -11,7 +12,7 @@ class ClientCtrl {
 
     public $visitDataAccepted;
 
-    public $visitDataDoctor;
+    public $petData;
     
     public function action_clientDisplay() {
 
@@ -34,11 +35,38 @@ class ClientCtrl {
             "pets.pet_user_id" => SessionUtils::load("id", $keep = true) 
         ]);
 
+        $this->petData = App::getDB()->select("pets", [
+            "[>]pet_types" => ["pets.pet_type_id" => "ptype_id"]
+        ],[
+            "pets.pet_name",
+            "pets.pet_age",
+            "pet_types.ptype_name"
+        ],[
+            "pets.pet_user_id" => SessionUtils::load("id", $keep = true) 
+        ]);
+
+
 
         App::getSmarty()->assign("lista", $this->visitDataAccepted);
+        App::getSmarty()->assign("petList", $this->petData);
+
+        App::getSmarty()->assign("page_header", "Panel klienta");
 
         App::getSmarty()->display("ClientPanel.tpl");
         
+    }
+
+    public function action_clientVisitCancel() {
+        $visit_id = ParamUtils::getFromGet("visit_id");
+
+        $this->visitDataAccepted = App::getDB()->update("visits", [
+            "visit_pet_id" => null,
+            "visit_reason" => null
+        ],[
+            "visit_id" => $visit_id 
+        ]);
+
+        header("Location: ".App::getConf()->app_url."/clientDisplay");
     }
     
 }

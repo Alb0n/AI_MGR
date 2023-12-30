@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-30 16:21:01
-  from 'C:\xampp\htdocs\zad_3_projekt\app\views\DoctorVisitPage.tpl' */
+/* Smarty version 4.3.4, created on 2023-12-30 16:22:39
+  from 'C:\xampp\htdocs\zad_3_projekt\app\views\RegisterPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_6590355d0b4c76_31385558',
+  'unifunc' => 'content_659035bf669502_72397818',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '703dcd736ec742f86ea358a3162816f91d1a793c' => 
+    'a6770fa6d735052ad959165cbd12d35fd52e525e' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\DoctorVisitPage.tpl',
-      1 => 1703949593,
+      0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\RegisterPage.tpl',
+      1 => 1703949653,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6590355d0b4c76_31385558 (Smarty_Internal_Template $_smarty_tpl) {
+function content_659035bf669502_72397818 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pl">
 <head>
@@ -37,20 +37,34 @@ function content_6590355d0b4c76_31385558 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class="login">
     <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-doctorVisit" method="post" class="pure-form pure-form-aligned bottom-margin">
-	<h3>Dodaj wizytę</h3>
+register" method="post" class="pure-form pure-form-aligned bottom-margin">
+	<h3>Rejestracja</h3>
 	<fieldset>
 		<div class="pure-control-group">
-			<label for="id_visit_date">Dzień: </label>
-			<input id="id_visit_date" type="date" name="visit_date" /><br>
-			<label for="id_visit_time">Godzina: </label>
-			<input id="id_visit_time" type="time" name="visit_time" /><br>
+			<label for="id_login">Login: </label>
+			<input id="id_login" type="text" name="login" /><br>
+			<label for="id_password">Hasło: </label>
+			<input id="id_password" type="password" name="password" />
+			<label for="id_password_repeat">Powtórz hasło: </label>
+			<input id="id_password_repeat" type="password" name="password_repeat" />
+			<label for="id_name">Imię: </label>
+			<input id="id_name" type="text" name="user_name" /><br>
+			<label for="id_surname">Nazwisko: </label>
+			<input id="id_surname" type="text" name="user_surname" />
+			<label for="id_email">E-mail: </label>
+			<input id="id_email" type="email" name="user_email" />
+			<label for="id_address">Adres zamieszkania: </label>
+			<input id="id_address" type="text" name="user_address" />
+			<label for="id_pesel">PESEL: </label>
+			<input id="id_pesel" type="text" name="user_pesel" />
+
 		</div>
 		<div class="pure_controls">
-			<input type="submit" value="Zapisz" class="pure-button pure-button-primary"/>
+			<input type="submit" value="Zarejestruj" class="pure-button pure-button-primary"/>
 		</div>
 	</fieldset>
 </div>
+
 
 <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
 <h4>Wystąpiły błędy:</h4>
@@ -68,7 +82,6 @@ $_smarty_tpl->tpl_vars['msg']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
 <?php }?>
-
 
 </body>
 </html><?php }

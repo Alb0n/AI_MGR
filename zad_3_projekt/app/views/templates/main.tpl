@@ -10,6 +10,10 @@
 </head>
 <body>
 
+{if count($conf->roles)>0}
+Zalogowano: {\core\SessionUtils::load("login", true)}
+{/if}
+
 <div class="header">
 	<h1>{$page_title|default:"Klinika weterynaryjna"}</h1>
 	<h2>{$page_header|default:"Umów się na wizytę"}</h1>
@@ -27,6 +31,7 @@
 		<a href="{$conf->action_root}logout"><button class="menuButton">Wyloguj</button></a>
 	{else}
 	 	<a href="{$conf->action_root}loginShow"><button class="menuButton">Zaloguj</button></a>
+		<a href="{$conf->action_root}register"><button class="menuButton">Rejestracja</button></a>
 	{/if}
 </div>
 

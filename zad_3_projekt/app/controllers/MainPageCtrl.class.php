@@ -27,12 +27,7 @@ class MainPageCtrl {
         ]);
 
         App::getSmarty()->assign("lista", $this->visitData);
-
-        // App::getSmarty()->assign("visit_doctor_name", $this->visitData["user_name"]);
-        // App::getSmarty()->assign("visit_doctor_surname", $this->visitData["user_surname"]);
-        // App::getSmarty()->assign("visit_datetime", $this->visitData["visit_datetime"]);
-
-        
+   
         App::getSmarty()->display("MainPage.tpl");
         
     }

@@ -12,11 +12,15 @@ Utils::addRoute('mainPage', 'MainPageCtrl');
 Utils::addRoute('login', 'LoginCtrl');
 Utils::addRoute('logout', 'LoginCtrl');
 Utils::addRoute('loginShow', 'LoginCtrl');
+Utils::addRoute('register', 'RegisterCtrl');
 
 Utils::addRoute('doctorDisplay', 'DoctorCtrl',["admin", "doctor"]);
+Utils::addRoute('doctorVisitCancel', 'DoctorCtrl',["admin", "doctor"]);
 Utils::addRoute('doctorVisit', 'DoctorVisitCtrl',["admin", "doctor"]);
 
 Utils::addRoute('clientDisplay', 'ClientCtrl',["admin", "client"]);
+Utils::addRoute('clientVisitCancel', 'ClientCtrl',["admin", "client"]);
+Utils::addRoute('petAdd', 'PetFormCtrl',["admin", "client"]);
 
 Utils::addRoute('visitForm', 'VisitFormCtrl',["admin", "client"]);
 

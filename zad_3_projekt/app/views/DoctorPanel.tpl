@@ -20,11 +20,14 @@
 						</tr>	
 					</table>
 				</div>
+				<div class="visit_area2">
+					<a href="{url action="doctorVisitCancel"}?visit_id={$wiersz["visit_id"]}"><button>Usuń wizytę</button></a>
+				</div>
 			</div>
 		{/foreach}
 		</div>
 	</div>
-	<div class="colHead"><h2>Wizyty zatwierdzone</h2>
+	<div class="colHead"><h2>Wizyty zarezerwowane</h2>
 		<div class="column">
 		{foreach $lista2 as $wiersz2}
 			<div class="visit">
@@ -75,14 +78,6 @@
 		</ol>
 	{/if}
 {/if}
-
-{if isset($result)}
-	<h4>Wynik</h4>
-	<p class="res">
-	{$result}
-	</p>
-{/if}
-
 </div>
 
 {/block}

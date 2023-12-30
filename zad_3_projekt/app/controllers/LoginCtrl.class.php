@@ -85,11 +85,10 @@ class LoginCtrl{
             RoleUtils::addRole("logged");
             Utils::addInfoMessage("Zalogowano");
 
-            //App::getSmarty()->display('MainPage.tpl');
             header("Location: ".App::getConf()->app_url);
         }
         else {
-            App::getSmarty()->display('Login.tpl');
+            App::getSmarty()->display('LoginPage.tpl');
         }
     }
 
@@ -97,27 +96,16 @@ class LoginCtrl{
 		$this->getLoginParams();  
         $this->generateView();     
         
-        
-        //App::getSmarty()->display("MainPage.tpl");
-        
     }
     public function action_logout() {
-        //RoleUtils::removeRole("logged");
-        //RoleUtils::removeRole(SessionUtils::load("role"));
-        //SessionUtils::remove("id");
-        //SessionUtils::remove("login");
-        //SessionUtils::remove("role");
-
         session_destroy();
         
-        
-        //App::getSmarty()->display("MainPage.tpl");
         App::getRouter()->redirectTo('mainPage');
         
     }
 
     public function action_loginShow() {
-        App::getSmarty()->display("Login.tpl");
+        App::getSmarty()->display("LoginPage.tpl");
     }
     
 }

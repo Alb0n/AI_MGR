@@ -26,23 +26,16 @@
 	</fieldset>
 </div>
 
-<div class="content">
-	{if $msgs->isError()}
-	<h4>Wystąpiły błędy:</h4>
-	<div class="err">
-        {foreach $msgs->getMessages() as $msg}
-            <li>{$msg->text}</li>
-        {/foreach}
-	</div>
-	{/if}
 
-	{if isset($result)}
-		<h4>Miesięczna rata: </h4>
-		<p class="res">
-		{"$result zł"}
-		</p>
-	{/if} 
+{if $msgs->isError()}
+<h4>Wystąpiły błędy:</h4>
+<div class="err">
+	{foreach $msgs->getMessages() as $msg}
+		<li>{$msg->text}</li>
+	{/foreach}
 </div>
+{/if}
+
 
 </body>
 </html>
