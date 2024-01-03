@@ -27,7 +27,7 @@ class MainPageCtrl {
         ]);
 
         App::getSmarty()->assign("lista", $this->visitData);
-   
+
         App::getSmarty()->display("MainPage.tpl");
         
     }

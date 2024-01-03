@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-30 16:21:04
+/* Smarty version 4.3.4, created on 2024-01-03 19:58:54
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\DoctorPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65903560a3a277_73001989',
+  'unifunc' => 'content_6595ae6e842d66_21128924',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f0f321a58080208be3f24ad6866f0fc55566eb45' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\DoctorPanel.tpl',
-      1 => 1703949618,
+      1 => 1704306155,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65903560a3a277_73001989 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6595ae6e842d66_21128924 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_71143531165903560a163d1_40248437', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7784121156595ae6e6c1ef1_98628675', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_125533761865903560a17582_15267315', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3164170076595ae6e6c3247_96559177', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'footer'} */
-class Block_71143531165903560a163d1_40248437 extends Smarty_Internal_Block
+class Block_7784121156595ae6e6c1ef1_98628675 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_71143531165903560a163d1_40248437',
+    0 => 'Block_7784121156595ae6e6c1ef1_98628675',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_125533761865903560a17582_15267315 extends Smarty_Internal_Block
+class Block_3164170076595ae6e6c3247_96559177 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_125533761865903560a17582_15267315',
+    0 => 'Block_3164170076595ae6e6c3247_96559177',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

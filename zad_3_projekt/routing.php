@@ -14,6 +14,12 @@ Utils::addRoute('logout', 'LoginCtrl');
 Utils::addRoute('loginShow', 'LoginCtrl');
 Utils::addRoute('register', 'RegisterCtrl');
 
+Utils::addRoute('adminDisplay', 'AdminCtrl',['admin']);
+Utils::addRoute('changeRole', 'AdminCtrl',['admin']);
+Utils::addRoute('userManage', 'AdminCtrl',['admin']);
+Utils::addRoute('visitManage', 'AdminCtrl',['admin']);
+Utils::addRoute('visitDelete', 'AdminCtrl',['admin']);
+
 Utils::addRoute('doctorDisplay', 'DoctorCtrl',["admin", "doctor"]);
 Utils::addRoute('doctorVisitCancel', 'DoctorCtrl',["admin", "doctor"]);
 Utils::addRoute('doctorVisit', 'DoctorVisitCtrl',["admin", "doctor"]);

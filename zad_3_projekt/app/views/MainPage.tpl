@@ -54,13 +54,6 @@
 	{/if}
 {/if}
 
-{if isset($result)}
-	<h4>Wynik</h4>
-	<p class="res">
-	{$result}
-	</p>
-{/if}
-
 </div>
 
 {/block}

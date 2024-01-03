@@ -140,12 +140,12 @@ class RegisterCtrl {
 
             App::getDB()->insert("users", [
                 "user_login" => $this->form->login,
-                "user_password" => $this->form->password,
+                "user_password" => md5($this->form->password),
                 "user_name" => $this->form->name,
                 "user_surname" => $this->form->surname,
                 "user_email" => $this->form->email,
                 "user_address" => $this->form->address,
-                "user_PESEL" => $this->form->pesel
+                "user_PESEL" => md5($this->form->pesel)
             ]);
 
             $userId = App::getDB()->id();

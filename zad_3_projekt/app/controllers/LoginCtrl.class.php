@@ -61,7 +61,7 @@ class LoginCtrl{
                 "roles.role_name"
             ],[
                 "user_login" => $this->form->login,
-                "user_password" => $this->form->password
+                "user_password" => md5($this->form->password)
             ]);
 
             if(empty($this->account)){
@@ -85,7 +85,8 @@ class LoginCtrl{
             RoleUtils::addRole("logged");
             Utils::addInfoMessage("Zalogowano");
 
-            header("Location: ".App::getConf()->app_url);
+            //header("Location: ".App::getConf()->app_url);
+            App::getRouter()->redirectTo('mainPage');
         }
         else {
             App::getSmarty()->display('LoginPage.tpl');
@@ -94,8 +95,7 @@ class LoginCtrl{
 
     public function action_login() {
 		$this->getLoginParams();  
-        $this->generateView();     
-        
+        $this->generateView();     ;
     }
     public function action_logout() {
         session_destroy();

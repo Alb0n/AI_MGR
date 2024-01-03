@@ -11,7 +11,15 @@
 <body>
 
 {if count($conf->roles)>0}
-Zalogowano: {\core\SessionUtils::load("login", true)}
+Zalogowano: {\core\SessionUtils::load("login", true)} <br>
+{/if}
+
+{if $msgs->isInfo()}
+        <ul>
+        {foreach $msgs->getMessages() as $msg}
+            <li>{$msg->text}</li>
+        {/foreach}
+        </ul>
 {/if}
 
 <div class="header">
@@ -21,6 +29,9 @@ Zalogowano: {\core\SessionUtils::load("login", true)}
 
 <div class="menu">
 	<a href="{$conf->action_root}mainPage"><button class="menuButton">Home</button></a>
+	{if \core\RoleUtils::inRole("admin")}
+	<a href="{$conf->action_root}adminDisplay"><button class="menuButton">Panel admina</button></a>
+	{/if}
 	{if \core\RoleUtils::inRole("doctor")}
 	<a href="{$conf->action_root}doctorDisplay"><button class="menuButton">Panel doktora</button></a>
 	{/if}

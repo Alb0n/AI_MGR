@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-30 15:38:40
+/* Smarty version 4.3.4, created on 2024-01-03 17:53:08
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65902b7007cc28_84913541',
+  'unifunc' => 'content_659590f4b1ce28_40770790',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '84bbb27bef9a1781c841d81a3cac36943c51b056' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\templates\\main.tpl',
-      1 => 1703947118,
+      1 => 1704300695,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65902b7007cc28_84913541 (Smarty_Internal_Template $_smarty_tpl) {
+function content_659590f4b1ce28_40770790 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -40,7 +40,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 <?php if (count($_smarty_tpl->tpl_vars['conf']->value->roles) > 0) {?>
 Zalogowano: <?php echo \core\SessionUtils::load("login",true);?>
+ <br>
+<?php }?>
 
+<?php if ($_smarty_tpl->tpl_vars['msgs']->value->isInfo()) {?>
+        <ul>
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getMessages(), 'msg');
+$_smarty_tpl->tpl_vars['msg']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
+$_smarty_tpl->tpl_vars['msg']->do_else = false;
+?>
+            <li><?php echo $_smarty_tpl->tpl_vars['msg']->value->text;?>
+</li>
+        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        </ul>
 <?php }?>
 
 <div class="header">
@@ -53,6 +69,10 @@ Zalogowano: <?php echo \core\SessionUtils::load("login",true);?>
 <div class="menu">
 	<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 mainPage"><button class="menuButton">Home</button></a>
+	<?php if (\core\RoleUtils::inRole("admin")) {?>
+	<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+adminDisplay"><button class="menuButton">Panel admina</button></a>
+	<?php }?>
 	<?php if (\core\RoleUtils::inRole("doctor")) {?>
 	<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 doctorDisplay"><button class="menuButton">Panel doktora</button></a>
@@ -74,7 +94,7 @@ register"><button class="menuButton">Rejestracja</button></a>
 
 <div class="content">
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_58755556165902b7007a904_26473609', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1624594756659590f4b19a27_76039251', 'content');
 ?>
 
 </div><!-- content -->
@@ -82,7 +102,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_58755556165902b700
 <div class="footer">
 	<p>
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_55790989665902b7007be99_67564044', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_38064735659590f4b1a915_79880636', 'footer');
 ?>
 
 	</p>
@@ -95,12 +115,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_55790989665902b700
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_58755556165902b7007a904_26473609 extends Smarty_Internal_Block
+class Block_1624594756659590f4b19a27_76039251 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_58755556165902b7007a904_26473609',
+    0 => 'Block_1624594756659590f4b19a27_76039251',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -110,12 +130,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_55790989665902b7007be99_67564044 extends Smarty_Internal_Block
+class Block_38064735659590f4b1a915_79880636 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_55790989665902b7007be99_67564044',
+    0 => 'Block_38064735659590f4b1a915_79880636',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
