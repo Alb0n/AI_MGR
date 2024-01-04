@@ -18,6 +18,8 @@ class LoginCtrl{
 
     public $account;
 
+    public $accountRoles;
+
     public function __construct() {
         $this->form = new LoginForm();
     }
@@ -64,6 +66,18 @@ class LoginCtrl{
                 "user_password" => md5($this->form->password)
             ]);
 
+            $this->accountRoles = App::getDB()->select("users", [
+                "[>]users_has_roles" => ["user_id" => "ur_user_id"],
+                "[>]roles" => ["users_has_roles.ur_role_id" => "role_id"]
+            ],[
+                "users.user_id",
+                "users.user_login",
+                "users.user_password",
+                "roles.role_name"
+            ],[
+                "user_login" => $this->form->login
+            ]);
+
             if(empty($this->account)){
                 Utils::addErrorMessage("Nieprawidłowy login lub hasło");
             }
@@ -79,13 +93,17 @@ class LoginCtrl{
         if($this->validateLogin()){
             SessionUtils::store("id", $this->account["user_id"]);
             SessionUtils::store("login", $this->account["user_login"]);
-            SessionUtils::store("role", $this->account["role_name"]);
 
-            RoleUtils::addRole($this->account["role_name"]);
+            foreach($this->accountRoles as $role) {
+                SessionUtils::store("role", $role["role_name"]);
+                RoleUtils::addRole($role["role_name"]);
+            }
+
             RoleUtils::addRole("logged");
-            Utils::addInfoMessage("Zalogowano");
+            Utils::addInfoMessage("Pomyślnie zalogowano");
 
-            //header("Location: ".App::getConf()->app_url);
+            SessionUtils::storeMessages();
+
             App::getRouter()->redirectTo('mainPage');
         }
         else {

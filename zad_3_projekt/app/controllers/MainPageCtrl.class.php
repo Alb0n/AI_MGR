@@ -5,6 +5,7 @@ namespace app\controllers;
 use core\App;
 use core\Message;
 use core\Utils;
+use core\SessionUtils;
 
 
 class MainPageCtrl {
@@ -23,10 +24,13 @@ class MainPageCtrl {
             "users.user_surname",
             "users.user_id"
         ], [
-            "visits.visit_pet_id" => null
+            "visits.visit_pet_id" => null,
+            //"visits.visit_doctor_id[!]" => SessionUtils::load("id", $keep = true) 
         ]);
 
         App::getSmarty()->assign("lista", $this->visitData);
+
+        SessionUtils::loadMessages();
 
         App::getSmarty()->display("MainPage.tpl");
         

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-30 16:26:16
+/* Smarty version 4.3.4, created on 2024-01-04 18:28:15
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\PetAddPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65903698368b38_13345760',
+  'unifunc' => 'content_6596eaaf93c3d7_68125313',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c661443c50fe9529a5344c46491ca5abd760a47' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\PetAddPage.tpl',
-      1 => 1703949638,
+      1 => 1704389267,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65903698368b38_13345760 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6596eaaf93c3d7_68125313 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pl">
 <head>
@@ -34,6 +34,9 @@ function content_65903698368b38_13345760 (Smarty_Internal_Template $_smarty_tpl)
 	<link rel="stylesheet" href="css/style.css">	
 </head>
 <body>
+
+<center><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+clientDisplay"><button class="menuButton">Wstecz</button></a></center>
 
 <div class="login">
     <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>

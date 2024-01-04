@@ -32,12 +32,13 @@ class ClientCtrl {
             "pets.pet_age",
             "pet_types.ptype_name"
         ],[
-            "pets.pet_user_id" => SessionUtils::load("id", $keep = true) 
+            "pets.pet_user_id" => SessionUtils::load("id", $keep = true), 
         ]);
 
         $this->petData = App::getDB()->select("pets", [
             "[>]pet_types" => ["pets.pet_type_id" => "ptype_id"]
         ],[
+            "pets.pet_id",
             "pets.pet_name",
             "pets.pet_age",
             "pet_types.ptype_name"
@@ -66,7 +67,32 @@ class ClientCtrl {
             "visit_id" => $visit_id 
         ]);
 
-        header("Location: ".App::getConf()->app_url."/clientDisplay");
+        //header("Location: ".App::getConf()->app_url."/clientDisplay");
+        Utils::addInfoMessage("Pomyślnie odmówiono wizytę");
+        SessionUtils::storeMessages();
+        
+        App::getRouter()->redirectTo('clientDisplay');
+    }
+
+    public function action_clientPetDelete() {
+        $pet_id = ParamUtils::getFromGet("pet_id");
+
+        App::getDB()->update("visits", [
+            "visits.visit_pet_id" => null,
+            "visits.visit_reason" => null 
+        ],[
+            "visits.visit_pet_id" => $pet_id
+        ]);
+
+        App::getDB()->delete("pets", [
+            "pet_id" => $pet_id
+        ]);
+
+        //header("Location: ".App::getConf()->app_url."/clientDisplay");
+        Utils::addInfoMessage("Pomyślnie usunięto zwierzę z konta");
+        SessionUtils::storeMessages();
+
+        App::getRouter()->redirectTo('clientDisplay');
     }
     
 }

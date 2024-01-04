@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<center><a href="{$conf->action_root}mainPage"><button class="menuButton">Home</button></a></center>
+
 <div class="login">
     <form action="{$conf->action_root}register" method="post" class="pure-form pure-form-aligned bottom-margin">
 	<h3>Rejestracja</h3>

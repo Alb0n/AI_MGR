@@ -13,7 +13,7 @@
 <div class="login">
     <form action="{url action="visitForm"}?id={$visit_id}" method="post" class="pure-form pure-form-aligned bottom-margin">
 	<h3>Wizyta</h3>
-	<h2>Lekarz: {$visit_doctor_name} {$visit_doctor_surname} {$visit_datetime}</h2>
+	<h2>Lekarz: {$visit_doctor_name} {$visit_doctor_surname}<br> {$visit_datetime}</h2>
 	<fieldset>
 		<div class="pure-control-group">
 			<label for="id_pet_name">Wybierz pacjenta: </label>

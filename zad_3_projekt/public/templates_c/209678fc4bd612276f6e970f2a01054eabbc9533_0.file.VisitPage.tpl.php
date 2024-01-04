@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-30 16:28:58
+/* Smarty version 4.3.4, created on 2024-01-04 20:03:53
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\VisitPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_6590373ac3d863_74624514',
+  'unifunc' => 'content_65970119d4e4c8_27209610',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '209678fc4bd612276f6e970f2a01054eabbc9533' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\VisitPage.tpl',
-      1 => 1703950136,
+      1 => 1704395030,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6590373ac3d863_74624514 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65970119d4e4c8_27209610 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pl">
 <head>
@@ -42,7 +42,7 @@ function content_6590373ac3d863_74624514 (Smarty_Internal_Template $_smarty_tpl)
 	<h3>Wizyta</h3>
 	<h2>Lekarz: <?php echo $_smarty_tpl->tpl_vars['visit_doctor_name']->value;?>
  <?php echo $_smarty_tpl->tpl_vars['visit_doctor_surname']->value;?>
- <?php echo $_smarty_tpl->tpl_vars['visit_datetime']->value;?>
+<br> <?php echo $_smarty_tpl->tpl_vars['visit_datetime']->value;?>
 </h2>
 	<fieldset>
 		<div class="pure-control-group">

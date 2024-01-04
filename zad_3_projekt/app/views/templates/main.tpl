@@ -11,15 +11,17 @@
 <body>
 
 {if count($conf->roles)>0}
-Zalogowano: {\core\SessionUtils::load("login", true)} <br>
+	Zalogowano: {\core\SessionUtils::load("login", true)} <br>
 {/if}
 
 {if $msgs->isInfo()}
-        <ul>
-        {foreach $msgs->getMessages() as $msg}
-            <li>{$msg->text}</li>
-        {/foreach}
-        </ul>
+	<center>
+		<div class="inf">
+			{foreach $msgs->getMessages() as $msg}
+				<h3>{$msg->text}</h3>
+			{/foreach}
+		</div>
+	</center>
 {/if}
 
 <div class="header">
@@ -52,7 +54,7 @@ Zalogowano: {\core\SessionUtils::load("login", true)} <br>
 
 <div class="footer">
 	<p>
-{block name=footer} Domyślna treść stopki .... {/block}
+{block name=footer} Projekt zaliczeniowy AI - Albert Pintera {/block}
 	</p>
 	<p>
 		Widok oparty na stylach <a href="http://purecss.io/" target="_blank">Pure CSS Yahoo!</a>. 

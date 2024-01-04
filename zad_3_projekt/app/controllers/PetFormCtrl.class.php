@@ -73,7 +73,9 @@ class PetFormCtrl {
         App::getSmarty()->assign("type_list", $this->petData);
 
         if($this->validatePetForm()){
-            header("Location: ".App::getConf()->app_url."/clientDisplay");
+            Utils::addInfoMessage("Pomyślnie dodano zwierzę");
+            SessionUtils::storeMessages();
+            App::getRouter()->redirectTo('clientDisplay');
         }
         else {
             App::getSmarty()->display('PetAddPage.tpl');

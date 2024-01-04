@@ -97,7 +97,10 @@ class VisitFormCtrl {
         App::getSmarty()->assign("visit_datetime", $this->visitData["visit_datetime"]);
         
         if($this->validateVisit()){
-            header("Location: ".App::getConf()->app_url);
+            Utils::addInfoMessage("Pomyślnie zapisano się na wizytę");
+            SessionUtils::storeMessages();
+            App::getRouter()->redirectTo('mainPage');
+            
         } else {
             App::getSmarty()->assign("visit_id", $this->visit_id);
             App::getSmarty()->display('VisitPage.tpl');

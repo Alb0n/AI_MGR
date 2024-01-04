@@ -70,7 +70,9 @@ class DoctorCtrl {
             "visit_id" => $visit_id 
         ]);
 
-        header("Location: ".App::getConf()->app_url."/doctorDisplay");
+        Utils::addInfoMessage("Pomyślnie usunięto zaproponowaną wizytę");
+        SessionUtils::storeMessages();
+        App::getRouter()->redirectTo('doctorDisplay');
 
     }
     

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2023-12-30 16:03:50
+/* Smarty version 4.3.4, created on 2024-01-04 20:12:20
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\ClientPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_659031567ff148_65927873',
+  'unifunc' => 'content_659703144164d8_23686688',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'df18c230067d756d20c908c72cbf3c3a0b66b4da' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\ClientPanel.tpl',
-      1 => 1703948621,
+      1 => 1704395225,
       2 => 'file',
     ),
   ),
@@ -20,43 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_659031567ff148_65927873 (Smarty_Internal_Template $_smarty_tpl) {
+function content_659703144164d8_23686688 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_100562503659031567e4d96_19244510', 'footer');
-?>
-
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_499683284659031567e5941_06323857', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1315054846659703143eb908_51923479', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
-/* {block 'footer'} */
-class Block_100562503659031567e4d96_19244510 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'footer' => 
-  array (
-    0 => 'Block_100562503659031567e4d96_19244510',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora<?php
-}
-}
-/* {/block 'footer'} */
 /* {block 'content'} */
-class Block_499683284659031567e5941_06323857 extends Smarty_Internal_Block
+class Block_1315054846659703143eb908_51923479 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_499683284659031567e5941_06323857',
+    0 => 'Block_1315054846659703143eb908_51923479',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -124,6 +104,11 @@ $_smarty_tpl->tpl_vars['row']->do_else = false;
 <br>
 						</tr>	
 					</table>
+				</div>
+				<div class="visit_area2">
+					<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"clientPetDelete"),$_smarty_tpl ) );?>
+?pet_id=<?php echo $_smarty_tpl->tpl_vars['row']->value["pet_id"];?>
+"><button>Usuń zwierzę</button></a>
 				</div>
 			</div>
 		<?php

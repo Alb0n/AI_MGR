@@ -59,7 +59,9 @@ class DoctorVisitCtrl {
 
     public function generateView(){
         if($this->validateDoctorVisit()){
-            header("Location: ".App::getConf()->app_url."/doctorDisplay");
+            Utils::addInfoMessage("Pomyślnie zaproponowano termin wizyty");
+            SessionUtils::storeMessages();
+            App::getRouter()->redirectTo('doctorDisplay');
         }
         else {
             App::getSmarty()->display('DoctorVisitPage.tpl');

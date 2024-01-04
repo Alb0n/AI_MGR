@@ -1,7 +1,5 @@
 {extends file="main.tpl"}
 
-{block name=footer}przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora{/block}
-
 {block name=content}
 
 <a href="{$conf->action_root}userManage"><button class="menuButton">Zarządzanie użytkownikami</button></a>
@@ -16,7 +14,7 @@
 						<tr>
 							Numer ID lekarza:<span class="tab"></span>{$wiersz2["visit_doctor_id"]}<br>
 							{$wiersz2["visit_datetime"]}<br>
-							{$wiersz2["visit_id"]}<br>
+							ID wizyty:<span class="tab"></span> {$wiersz2["visit_id"]}<br>
 							Pacjent:<span class="tab"></span>{$wiersz2["pet_name"]}<br>
 							Rodzaj:<span class="tab"></span>{$wiersz2["ptype_name"]}<br>
 							Wiek:<span class="tab"></span>{$wiersz2["pet_age"]}<br>

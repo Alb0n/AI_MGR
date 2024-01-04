@@ -163,6 +163,8 @@ class RegisterCtrl {
 
             Utils::addInfoMessage("Konto zostało utworzone");
 
+            SessionUtils::storeMessages();
+
         }catch(\PDOException $e) {
             Utils::addErrorMessage("Błąd połączenia z bazą danych");
         }
@@ -171,7 +173,7 @@ class RegisterCtrl {
     public function generateView() {
         if($this->validateRegisterForm()){
             $this->insertToDb();
-            header("Location: ".App::getConf()->app_url);
+            App::getRouter()->redirectTo('mainPage');
         }
         else {
             App::getSmarty()->display('RegisterPage.tpl');

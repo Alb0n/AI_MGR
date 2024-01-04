@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<center><a href="{$conf->action_root}doctorDisplay"><button class="menuButton">Wstecz</button></a></center>
+
 <div class="login">
     <form action="{$conf->action_root}doctorVisit" method="post" class="pure-form pure-form-aligned bottom-margin">
 	<h3>Dodaj wizytę</h3>

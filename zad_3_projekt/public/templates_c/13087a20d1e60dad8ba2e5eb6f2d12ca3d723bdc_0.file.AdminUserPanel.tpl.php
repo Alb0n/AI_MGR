@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-01-03 21:02:16
+/* Smarty version 4.3.4, created on 2024-01-04 20:12:02
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\AdminUserPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_6595bd4816b218_00929895',
+  'unifunc' => 'content_6597030224a499_20222667',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13087a20d1e60dad8ba2e5eb6f2d12ca3d723bdc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\AdminUserPanel.tpl',
-      1 => 1704312134,
+      1 => 1704395509,
       2 => 'file',
     ),
   ),
@@ -20,43 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6595bd4816b218_00929895 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6597030224a499_20222667 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4878603256595bd48156f28_77230221', 'footer');
-?>
-
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5553872376595bd48157a29_13221966', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17299098426597030222cf97_14927201', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
-/* {block 'footer'} */
-class Block_4878603256595bd48156f28_77230221 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'footer' => 
-  array (
-    0 => 'Block_4878603256595bd48156f28_77230221',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora<?php
-}
-}
-/* {/block 'footer'} */
 /* {block 'content'} */
-class Block_5553872376595bd48157a29_13221966 extends Smarty_Internal_Block
+class Block_17299098426597030222cf97_14927201 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_5553872376595bd48157a29_13221966',
+    0 => 'Block_17299098426597030222cf97_14927201',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

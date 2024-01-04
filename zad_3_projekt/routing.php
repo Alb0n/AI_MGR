@@ -26,6 +26,7 @@ Utils::addRoute('doctorVisit', 'DoctorVisitCtrl',["admin", "doctor"]);
 
 Utils::addRoute('clientDisplay', 'ClientCtrl',["admin", "client"]);
 Utils::addRoute('clientVisitCancel', 'ClientCtrl',["admin", "client"]);
+Utils::addRoute('clientPetDelete', 'ClientCtrl',["admin", "client"]);
 Utils::addRoute('petAdd', 'PetFormCtrl',["admin", "client"]);
 
 Utils::addRoute('visitForm', 'VisitFormCtrl',["admin", "client"]);

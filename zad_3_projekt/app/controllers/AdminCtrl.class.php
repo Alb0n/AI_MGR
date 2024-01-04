@@ -2,7 +2,6 @@
 
 namespace app\controllers;
 
-use app\forms\DoctorListForm;
 use core\App;
 use core\SessionUtils;
 use core\ParamUtils;
@@ -20,25 +19,8 @@ class AdminCtrl {
 
     public $form;
 
-    public function __construct() {
-        $this->form = new DoctorListForm();
-    }
-
-    public function validateDoctorListForm() {
-        if(!$this->form->checkIsNull()) return false;
-
-        $v = new Validator();
-
-        $v->validate($this->form->doctor_name, [
-            'trim' => true,
-            'required' => true,
-            'required_message' => 'Nie wybrano lekarza',
-        ]);
-        
-        if(!App::getMessages()->isError()) return true;
-        else return false;
-
-    }
+    public $isDoctor;
+    
     
     public function action_adminDisplay() {
 
@@ -51,16 +33,17 @@ class AdminCtrl {
     public function action_changeRole() {
         $user_id = ParamUtils::getFromGet("user_id");
 
-        $isDoctor = App::getDB()->has("users_has_roles", [
+        $this->isDoctor = App::getDB()->has("users_has_roles", [
             "ur_user_id" => $user_id,
             "ur_role_id" => 3
         ]);
 
-        if(!$isDoctor) {
+        if(!$this->isDoctor) {
             App::getDB()->insert("users_has_roles", [
                 "ur_user_id" => $user_id,
                 "ur_role_id" => 3
             ]);
+            
             App::getDB()->delete("users_has_roles", [
                 "ur_user_id" => $user_id,
                 "ur_role_id" => 2
@@ -69,15 +52,20 @@ class AdminCtrl {
             App::getDB()->delete("visits", [
                 "visit_doctor_id" => $user_id
             ]);
+            
             App::getDB()->delete("users_has_roles", [
                 "ur_user_id" => $user_id,
                 "ur_role_id" => 3
             ]);
+            
             App::getDB()->insert("users_has_roles", [
                 "ur_user_id" => $user_id,
                 "ur_role_id" => 2
             ]);
-        }   
+        } 
+        
+        Utils::addInfoMessage("Pomyślnie zmieniono rolę użytkownika");  
+        SessionUtils::storeMessages();
 
         App::getRouter()->redirectTo('userManage');
     }
@@ -95,7 +83,7 @@ class AdminCtrl {
         ],[
             "roles.role_name[!]" => "admin"
         ]);
-
+        
         App::getSmarty()->assign("user_list", $this->userData);
         App::getSmarty()->assign("page_header", "Panel admina");
         App::getSmarty()->display('AdminUserPanel.tpl');
@@ -148,6 +136,9 @@ class AdminCtrl {
         App::getDB()->delete("visits", [
             "visit_id" => $visit_id 
         ]);
+
+        Utils::addInfoMessage("Pomyślnie usunięto wizytę");
+        SessionUtils::storeMessages();
 
         App::getRouter()->redirectTo('visitManage');
     }

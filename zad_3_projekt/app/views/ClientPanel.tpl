@@ -1,7 +1,5 @@
 {extends file="main.tpl"}
 
-{block name=footer}przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora{/block}
-
 {block name=content}
 
 <a href="{$conf->action_root}petAdd"><button class="menuButton">Dodaj zwierzę</button></a><br>
@@ -16,7 +14,6 @@
 							Lekarz: {$wiersz["user_name"]}
 							{$wiersz["user_surname"]}<br>
 							{$wiersz["visit_datetime"]}<br>
-							{$wiersz["visit_id"]}<br>
 							Pacjent:<span class="tab"></span>{$wiersz["pet_name"]}<br>
 							Powód wizyty:<span class="tab"></span>{$wiersz["visit_reason"]}
 						</tr>	
@@ -42,48 +39,12 @@
 						</tr>	
 					</table>
 				</div>
+				<div class="visit_area2">
+					<a href="{url action="clientPetDelete"}?pet_id={$row["pet_id"]}"><button>Usuń zwierzę</button></a>
+				</div>
 			</div>
 		{/foreach}
 		</div>
 	</div>
-
-<div class="messages">
-
-{* wyświeltenie listy błędów, jeśli istnieją *}
-{if isset($messages)}
-	{if count($messages) > 0} 
-		<h4>Wystąpiły błędy: </h4>
-		<ol class="err">
-		{foreach  $messages as $msg}
-		{strip}
-			<li>{$msg}</li>
-		{/strip}
-		{/foreach}
-		</ol>
-	{/if}
-{/if}
-
-{* wyświeltenie listy informacji, jeśli istnieją *}
-{if isset($infos)}
-	{if count($infos) > 0} 
-		<h4>Informacje: </h4>
-		<ol class="inf">
-		{foreach  $infos as $msg}
-		{strip}
-			<li>{$msg}</li>
-		{/strip}
-		{/foreach}
-		</ol>
-	{/if}
-{/if}
-
-{if isset($result)}
-	<h4>Wynik</h4>
-	<p class="res">
-	{$result}
-	</p>
-{/if}
-
-</div>
 
 {/block}
