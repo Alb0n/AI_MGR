@@ -25,7 +25,6 @@ class MainPageCtrl {
             "users.user_id"
         ], [
             "visits.visit_pet_id" => null,
-            //"visits.visit_doctor_id[!]" => SessionUtils::load("id", $keep = true) 
         ]);
 
         App::getSmarty()->assign("lista", $this->visitData);

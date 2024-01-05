@@ -35,7 +35,7 @@
 	<a href="{$conf->action_root}adminDisplay"><button class="menuButton">Panel admina</button></a>
 	{/if}
 	{if \core\RoleUtils::inRole("doctor")}
-	<a href="{$conf->action_root}doctorDisplay"><button class="menuButton">Panel doktora</button></a>
+	<a href="{$conf->action_root}doctorDisplay"><button class="menuButton">Panel lekarza</button></a>
 	{/if}
 	{if \core\RoleUtils::inRole("client")}
 	<a href="{$conf->action_root}clientDisplay"><button class="menuButton">Panel klienta</button></a>

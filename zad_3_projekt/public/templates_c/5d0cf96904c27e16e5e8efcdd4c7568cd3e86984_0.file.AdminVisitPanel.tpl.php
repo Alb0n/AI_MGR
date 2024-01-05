@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-01-04 20:12:03
+/* Smarty version 4.3.4, created on 2024-01-04 20:34:38
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\AdminVisitPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_6597030361d244_24364740',
+  'unifunc' => 'content_6597084e5ce493_06615296',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5d0cf96904c27e16e5e8efcdd4c7568cd3e86984' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\AdminVisitPanel.tpl',
-      1 => 1704395219,
+      1 => 1704395604,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6597030361d244_24364740 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6597084e5ce493_06615296 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_118569299265970303606ab4_53856815', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5844223966597084e5b6070_91141218', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_118569299265970303606ab4_53856815 extends Smarty_Internal_Block
+class Block_5844223966597084e5b6070_91141218 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_118569299265970303606ab4_53856815',
+    0 => 'Block_5844223966597084e5b6070_91141218',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,7 +64,7 @@ $_smarty_tpl->tpl_vars['wiersz2']->do_else = false;
 <br>
 							<?php echo $_smarty_tpl->tpl_vars['wiersz2']->value["visit_datetime"];?>
 <br>
-							<?php echo $_smarty_tpl->tpl_vars['wiersz2']->value["visit_id"];?>
+							ID wizyty:<span class="tab"></span> <?php echo $_smarty_tpl->tpl_vars['wiersz2']->value["visit_id"];?>
 <br>
 							Pacjent:<span class="tab"></span><?php echo $_smarty_tpl->tpl_vars['wiersz2']->value["pet_name"];?>
 <br>

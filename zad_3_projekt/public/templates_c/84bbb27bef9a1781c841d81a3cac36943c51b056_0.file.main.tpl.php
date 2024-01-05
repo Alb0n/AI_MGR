@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-01-04 20:08:16
+/* Smarty version 4.3.4, created on 2024-01-05 16:55:09
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65970220bf0464_49504005',
+  'unifunc' => 'content_6598265da0fdb4_29124779',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '84bbb27bef9a1781c841d81a3cac36943c51b056' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\templates\\main.tpl',
-      1 => 1704395294,
+      1 => 1704470098,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65970220bf0464_49504005 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6598265da0fdb4_29124779 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -77,7 +77,7 @@ adminDisplay"><button class="menuButton">Panel admina</button></a>
 	<?php }?>
 	<?php if (\core\RoleUtils::inRole("doctor")) {?>
 	<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-doctorDisplay"><button class="menuButton">Panel doktora</button></a>
+doctorDisplay"><button class="menuButton">Panel lekarza</button></a>
 	<?php }?>
 	<?php if (\core\RoleUtils::inRole("client")) {?>
 	<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
@@ -96,7 +96,7 @@ register"><button class="menuButton">Rejestracja</button></a>
 
 <div class="content">
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_160350195465970220beeed6_05301698', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10172934786598265da0e781_15100740', 'content');
 ?>
 
 </div><!-- content -->
@@ -104,7 +104,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_160350195465970220
 <div class="footer">
 	<p>
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204181688865970220bef9c5_06926305', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18676475156598265da0f2b4_49476077', 'footer');
 ?>
 
 	</p>
@@ -117,12 +117,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204181688865970220
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_160350195465970220beeed6_05301698 extends Smarty_Internal_Block
+class Block_10172934786598265da0e781_15100740 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_160350195465970220beeed6_05301698',
+    0 => 'Block_10172934786598265da0e781_15100740',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -132,12 +132,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_204181688865970220bef9c5_06926305 extends Smarty_Internal_Block
+class Block_18676475156598265da0f2b4_49476077 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_204181688865970220bef9c5_06926305',
+    0 => 'Block_18676475156598265da0f2b4_49476077',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

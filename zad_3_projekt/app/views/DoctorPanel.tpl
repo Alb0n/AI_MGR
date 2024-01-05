@@ -32,7 +32,6 @@
 					<table cellpadding="5">
 						<tr>
 							{$wiersz2["visit_datetime"]}<br>
-							{$wiersz2["visit_id"]}<br>
 							Pacjent:<span class="tab"></span>{$wiersz2["pet_name"]}<br>
 							Rodzaj:<span class="tab"></span>{$wiersz2["ptype_name"]}<br>
 							Wiek:<span class="tab"></span>{$wiersz2["pet_age"]}<br>

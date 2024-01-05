@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-01-04 20:12:20
+/* Smarty version 4.3.4, created on 2024-01-04 20:29:01
   from 'C:\xampp\htdocs\zad_3_projekt\app\views\ClientPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_659703144164d8_23686688',
+  'unifunc' => 'content_659706fda4bb37_04377813',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'df18c230067d756d20c908c72cbf3c3a0b66b4da' => 
     array (
       0 => 'C:\\xampp\\htdocs\\zad_3_projekt\\app\\views\\ClientPanel.tpl',
-      1 => 1704395225,
+      1 => 1704395730,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_659703144164d8_23686688 (Smarty_Internal_Template $_smarty_tpl) {
+function content_659706fda4bb37_04377813 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1315054846659703143eb908_51923479', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_248538142659706fda2fbf9_30533340', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_1315054846659703143eb908_51923479 extends Smarty_Internal_Block
+class Block_248538142659706fda2fbf9_30533340 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1315054846659703143eb908_51923479',
+    0 => 'Block_248538142659706fda2fbf9_30533340',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -63,8 +63,6 @@ $_smarty_tpl->tpl_vars['wiersz']->do_else = false;
 							<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["user_surname"];?>
 <br>
 							<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["visit_datetime"];?>
-<br>
-							<?php echo $_smarty_tpl->tpl_vars['wiersz']->value["visit_id"];?>
 <br>
 							Pacjent:<span class="tab"></span><?php echo $_smarty_tpl->tpl_vars['wiersz']->value["pet_name"];?>
 <br>
@@ -116,56 +114,6 @@ $_smarty_tpl->tpl_vars['row']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>
 	</div>
-
-<div class="messages">
-
-<?php if ((isset($_smarty_tpl->tpl_vars['messages']->value))) {?>
-	<?php if (count($_smarty_tpl->tpl_vars['messages']->value) > 0) {?> 
-		<h4>Wystąpiły błędy: </h4>
-		<ol class="err">
-		<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['messages']->value, 'msg');
-$_smarty_tpl->tpl_vars['msg']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
-$_smarty_tpl->tpl_vars['msg']->do_else = false;
-?>
-		<li><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
-</li>
-		<?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-		</ol>
-	<?php }
-}?>
-
-<?php if ((isset($_smarty_tpl->tpl_vars['infos']->value))) {?>
-	<?php if (count($_smarty_tpl->tpl_vars['infos']->value) > 0) {?> 
-		<h4>Informacje: </h4>
-		<ol class="inf">
-		<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['infos']->value, 'msg');
-$_smarty_tpl->tpl_vars['msg']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
-$_smarty_tpl->tpl_vars['msg']->do_else = false;
-?>
-		<li><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
-</li>
-		<?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-		</ol>
-	<?php }
-}?>
-
-<?php if ((isset($_smarty_tpl->tpl_vars['result']->value))) {?>
-	<h4>Wynik</h4>
-	<p class="res">
-	<?php echo $_smarty_tpl->tpl_vars['result']->value;?>
-
-	</p>
-<?php }?>
-
-</div>
 
 <?php
 }

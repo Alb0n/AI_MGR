@@ -57,7 +57,7 @@ class DoctorCtrl {
         App::getSmarty()->assign("lista", $this->visitData);
         App::getSmarty()->assign("lista2", $this->visitDataAccepted);
 
-        App::getSmarty()->assign("page_header", "Panel doktora");
+        App::getSmarty()->assign("page_header", "Panel lekarza");
 
         App::getSmarty()->display("DoctorPanel.tpl");
         

@@ -115,6 +115,7 @@ class LoginCtrl{
 		$this->getLoginParams();  
         $this->generateView();     ;
     }
+    
     public function action_logout() {
         session_destroy();
         

@@ -17,8 +17,6 @@ class AdminCtrl {
 
     public $visitDataAccepted;
 
-    public $form;
-
     public $isDoctor;
     
     
@@ -90,14 +88,6 @@ class AdminCtrl {
     }
     
     public function action_visitManage() {
-        $this->doctorData = App::getDB()->select("users", [
-            "[>]visits" => ["user_id" => "visit_doctor_id"]
-        ],[
-            "users.user_name",
-            "users.user_surname",
-            "visits.visit_doctor_id",
-        ]);
-
         $this->visitDataAccepted = App::getDB()->select("visits", [
             "[>]pets" => ["visit_pet_id" => "pet_id"],
             "[>]users" => ["pets.pet_user_id" => "user_id"],
@@ -117,17 +107,12 @@ class AdminCtrl {
             "visits.visit_pet_id[!]" => null,
         ]);
 
-        
-        App::getSmarty()->assign("doctor_list", $this->doctorData);
         App::getSmarty()->assign("visit_list", $this->visitDataAccepted);
 
         App::getSmarty()->assign("page_header", "Panel admina");
         
-        if($this->validateDoctorListForm()){
-            App::getSmarty()->display('AdminVisitPanel.tpl');
-        } else {
-            App::getSmarty()->display('AdminVisitPanel.tpl');
-        }
+        App::getSmarty()->display('AdminVisitPanel.tpl');
+    
     }
 
     public function action_visitDelete() {

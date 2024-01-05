@@ -46,8 +46,6 @@ class ClientCtrl {
             "pets.pet_user_id" => SessionUtils::load("id", $keep = true) 
         ]);
 
-
-
         App::getSmarty()->assign("lista", $this->visitDataAccepted);
         App::getSmarty()->assign("petList", $this->petData);
 
@@ -67,7 +65,6 @@ class ClientCtrl {
             "visit_id" => $visit_id 
         ]);
 
-        //header("Location: ".App::getConf()->app_url."/clientDisplay");
         Utils::addInfoMessage("Pomyślnie odmówiono wizytę");
         SessionUtils::storeMessages();
         
@@ -88,7 +85,6 @@ class ClientCtrl {
             "pet_id" => $pet_id
         ]);
 
-        //header("Location: ".App::getConf()->app_url."/clientDisplay");
         Utils::addInfoMessage("Pomyślnie usunięto zwierzę z konta");
         SessionUtils::storeMessages();
 
