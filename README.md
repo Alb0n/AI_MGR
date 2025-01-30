@@ -1,3 +1,4 @@
-Repozytorium zawiera zadania realizowane w ramach przedmiotu "Aplikacje Internetowe". 
+# Vet clinic
 
-Zadanie 3 to projekt aplikacji internetowej (klinika weterynaryjna) zaimplementowany w języku PHP z wykorzystaniem framework'a "Amelia". 
+The repository contains tasks carried out as part of the "Internet Applications" course.
+Task 3 is a web application project (vet clinic) implemented in PHP using the "Amelia" framework.
